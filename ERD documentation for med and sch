@@ -1,0 +1,142 @@
+MED ERD database
+
+ENTITIES
+
+* Med_staff 
+	- staff_id INT (primary Key)
+	- staff_fname char (20)
+	- staff_lname char (20)
+	- staff_designation char (20)
+	- staff_grade_level char (20)
+	- gender char (1)
+	- address char (45)
+	- phone INT
+	- nin INT
+	- account_number INT
+	- dob date
+	- next_o_kin char (45)
+	
+	// Bussiness Rules
+		- all staffs must be uniquely identified
+		- staff should attend to patients at a time
+		
+	
+* patients
+	- pat_id INT
+	- pat_fname char (20)
+	- pat_lname char (20)
+	- gender char (1)
+	- pat_address char (45)
+	- pat_phone_number INT
+	- pat_age INT
+	- marital_status char (10)
+	- dob Date
+	
+* suppliers
+	- sup_id INT (primary key)
+	- sup_name char (45)
+	- sup_phone_number INT
+	- sup_department
+	- sup_address
+	
+* med_department
+	- dept_id INT (primary key)
+	- dept_name char (20)
+	- dept_ward INT
+	
+* inventory
+	- inventory_id INT (primary key)
+	- inventory_name char (20)
+	- invent_description char (45)
+	- expiry_date Date
+	- qty_in_store INT
+	- order_date Date
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+Studend internship ERP
+
+ENTITIES
+
+* Student
+	- stud_reg INT (primary key) because it uniquely identifies each student in a school.
+	- stud_fname char(20)
+	- stud_lname char(20)
+	- gender char(1)
+	- course char(20)
+	- faculty
+	- department
+	- address
+	- phone_number
+	
+	// Business Rules
+		- every stud must have a valid and unique reg no.
+		- every stud must belong to a department.
+		- student must be either part time or full time must not be null
+		
+	
+* faculty
+	//- fac_id INT (primary key) uniquely identifies each faculty
+	- faculty_name char (20)
+	- faculty_block INT
+	- dean_of_faculty
+	
+	// Bussiness Rules 
+		- each faculty must be uniquely identified
+		- every department must belong to a faculty
+		- every student undergoing intership must be approved by the dean
+	
+* Department
+	- dept_id INT (primary key) uniquely identifies each department
+	- dept_name char (30)
+	- hod char (30)
+	- dept_block
+	
+	// Bussiness Rules
+		- every dept must be uniquely identified
+		- every dept must belong to a facilty
+		- every dept must have an HOD
+		
+	
+	
+	
+* intern_program
+	- program_id INT (primary Key) this uniquely identifies each internship opportunity 
+	- intership_name
+	- description
+	- open_date
+	- duration
+	- position
+	
+	// Bussiness Rules
+		- all internship program must come from a company
+		- all internship must be taken by a valid registered student
+		- must be uniquely identified.
+
+* company
+	- comp_id INT (primary key) this creates a unique id for each company.
+	- name
+	- address
+	- phone_number
+	
+	
+* degree
+	- degree_id INT (primary key) creates a unique and required value for degree
+	- degree name char (40)
+	- duration
+	- faculty
+	
+* application
+	- app_num INT (primary key) 
+	- name
+	- industry
+	- purpose
+	
+
